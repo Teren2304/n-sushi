@@ -1,5 +1,5 @@
-include ../mixins/all
 include ../data/all
+include ../components/preloader/_index
 
 doctype html
 html
@@ -7,15 +7,9 @@ html
     include _head
 
   body
-    include ../components/_header
+    +preloader
 
     block content
 
-    include ../components/_mobile-navigation
-
-    include ../components/_footer
-
-    include ../components/_cookies-policy
-
     block scripts
-        include ../partials/_scripts
+      script(src="/js/app.js")

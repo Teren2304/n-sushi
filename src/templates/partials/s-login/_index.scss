@@ -1,0 +1,68 @@
+.s-login {
+  position: fixed;
+  top: 0;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  opacity: 0;
+  z-index: -1;
+  background-color: rgba(#000, 0.5);
+  padding: 0 5px;
+
+  &__wrap {
+    @include flex($justify-content: space-between, $direction: column);
+    @include size(100%, 295px);
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: $default-transition;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #1b1d2c;
+    background-color: #2d3346;
+    padding: 30px 10px;
+    max-width: 500px;
+  }
+
+  &__block {
+    text-align: center;
+  }
+
+  &__fingerprint {
+    @include size(48px, 57px);
+
+    margin: 0 auto 20px;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 17px;
+  }
+
+  &__text {
+    color: rgba(#fff, 0.5);
+
+    &--gold {
+      color: $gold;
+    }
+  }
+
+  &__footer {
+    @include flex(space-between, center);
+
+    font-size: 15px;
+  }
+
+  &--active {
+    opacity: 1;
+    z-index: 13;
+
+    .s-login {
+
+      &__wrap {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

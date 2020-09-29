@@ -1,0 +1,9 @@
+include h-nav/_index
+
+mixin header-in
+  header.header&attributes(attributes)
+    +h-nav-in
+
+mixin header-logout
+  header.headerv&attributes(attributes)
+    +h-nav-logout

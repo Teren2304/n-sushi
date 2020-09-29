@@ -1,0 +1,40 @@
+.ip-control-bar {
+  background-color: #1a1e30;
+  height: 40px;
+
+  &__wrap {
+    @include flex($align-items: center);
+
+    height: 100%;
+  }
+
+  &__link {
+    @include flex(center, center);
+
+    position: relative;
+    padding: 0 15px 2px;
+    min-width: 80px;
+    height: 100%;
+    color: rgba($gold, 0.5);
+
+    &::after {
+      @include size(0, 4px);
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: $default-transition;
+      background-color: $gold;
+      content: '';
+    }
+
+    &--active {
+      color: rgba($gold, 1);
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

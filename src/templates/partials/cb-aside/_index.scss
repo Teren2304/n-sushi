@@ -1,0 +1,32 @@
+.cb-aside {
+  @include flex(space-between, stretch, column);
+
+  position: fixed;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: $default-transition;
+  opacity: 0;
+  z-index: 12;
+  background-color: #1a1e30;
+
+  &__body {
+    @include overflow-y;
+
+    flex-grow: 1;
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  @include media-min(600) {
+    left: auto;
+    width: 350px;
+  }
+
+  &--active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

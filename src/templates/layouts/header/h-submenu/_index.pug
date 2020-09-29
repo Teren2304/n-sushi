@@ -1,0 +1,40 @@
+.h-submenu
+  a(href="/pages/live/main").h-submenu__item.h-submenu__item--active#h-submenu-main
+    .h-submenu__icon
+      svg(width='16' height='17' viewbox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M15.926 7.81354L8.19048 0.0780697C8.08636 -0.0260232 7.91757 -0.0260232 7.81344 0.0780697L0.0779698 7.81354C-0.0261564 7.91787 -0.0259564 8.08686 0.0783698 8.19098C0.182696 8.29511 0.351684 8.29491 0.455811 8.19058L1.33575 7.30878V15.7349C1.33575 15.8821 1.45514 16.0015 1.6024 16.0015H14.4015C14.5488 16.0015 14.6682 15.8821 14.6682 15.7349V7.30878L15.5481 8.18872C15.654 8.29101 15.8228 8.28811 15.9252 8.18218C16.0249 8.07886 16.0249 7.91503 15.9252 7.81168L15.926 7.81354ZM9.8685 15.4682H6.13542V11.4685C6.13542 10.4376 6.9711 9.60195 8.00196 9.60195C9.03283 9.60195 9.8685 10.4376 9.8685 11.4685V15.4682ZM14.1349 15.4682H10.4018V11.4685C10.4018 10.1431 9.32734 9.06866 8.00196 9.06866C6.67659 9.06866 5.60213 10.1431 5.60213 11.4685V15.4682H1.86905V6.77548L8.00196 0.642564L14.1349 6.77548V15.4682Z' fill='white')
+    p.h-submenu__text Main
+
+  a(href="/pages/live/in-play").h-submenu__item#h-submenu-live
+    .h-submenu__icon
+      svg(width='15', height='11', viewBox='0 0 15 11', fill='none', xmlns='http://www.w3.org/2000/svg')
+        g(opacity='0.5')
+          mask#path-1-inside-1(fill='white')
+            path(fill-rule='evenodd', clip-rule='evenodd', d='M2 0C0.895431 0 0 0.895431 0 2V9C0 10.1046 0.89543 11 2 11H13C14.1046 11 15 10.1046 15 9V2C15 0.895431 14.1046 0 13 0H2ZM10.1613 5.27083L5.80645 3.20833V7.33333L10.1613 5.27083Z')
+          path(d='M5.80645 3.20833L6.10607 2.5757L5.10645 2.10227V3.20833H5.80645ZM10.1613 5.27083L10.4609 5.90347L11.7967 5.27083L10.4609 4.6382L10.1613 5.27083ZM5.80645 7.33333H5.10645V8.4394L6.10607 7.96597L5.80645 7.33333ZM0.7 2C0.7 1.28203 1.28203 0.7 2 0.7V-0.7C0.508831 -0.7 -0.7 0.508831 -0.7 2H0.7ZM0.7 9V2H-0.7V9H0.7ZM2 10.3C1.28203 10.3 0.7 9.71797 0.7 9H-0.7C-0.7 10.4912 0.508831 11.7 2 11.7V10.3ZM13 10.3H2V11.7H13V10.3ZM14.3 9C14.3 9.71797 13.718 10.3 13 10.3V11.7C14.4912 11.7 15.7 10.4912 15.7 9H14.3ZM14.3 2V9H15.7V2H14.3ZM13 0.7C13.718 0.7 14.3 1.28203 14.3 2H15.7C15.7 0.508831 14.4912 -0.7 13 -0.7V0.7ZM2 0.7H13V-0.7H2V0.7ZM5.50683 3.84097L9.86167 5.90347L10.4609 4.6382L6.10607 2.5757L5.50683 3.84097ZM6.50645 7.33333V3.20833H5.10645V7.33333H6.50645ZM9.86167 4.6382L5.50683 6.7007L6.10607 7.96597L10.4609 5.90347L9.86167 4.6382Z', fill='white', mask='url(#path-1-inside-1)')
+    p.h-submenu__text Live
+
+  .h-submenu__option
+    .h-submenu__button#h-submenu-button
+      p.h-submenu__bet 2
+      a.h-submenu__down
+        svg(width='18' height='11' viewbox='0 0 18 11' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M17 1L9 9L1 1' stroke='#F1CB62' stroke-width='2' stroke-linecap='round')
+    p.h-submenu__coff.h-submenu__coff--down 2.17
+    p.h-submenu__text Doubles
+
+  a.h-submenu__item#h-submenu-search
+    .h-submenu__icon
+      svg(width='13' height='14' viewbox='0 0 13 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+        g
+          circle(cx='5.5' cy='5.5' r='5.15' stroke='white' stroke-width='0.7')
+          line(x1='12.7525' y1='13.2475' x2='8.75251' y2='9.24749' stroke='white' stroke-width='0.7')
+    p.h-submenu__text Search
+
+  a(href="/pages/cabinet/history/bet-history").h-submenu__item#h-submenu-bets
+    .h-submenu__icon
+      svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+        g(opacity='0.5')
+          circle(cx='10.5' cy='10.5' r='8.15' stroke='white' stroke-width='0.7')
+    p.h-submenu__text My Bets
+      p.h-submenu__count 1

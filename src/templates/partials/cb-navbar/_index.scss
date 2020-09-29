@@ -1,0 +1,119 @@
+.cb-navbar {
+  overflow: hidden;
+
+  &__item {
+    position: relative;
+    border-bottom: 1px solid #0c1022;
+
+    > .cb-navbar {
+      display: none;
+      border-radius: 0;
+    }
+
+    &--logout {
+
+      .cb-navbar {
+
+        &__link {
+          color: rgba(#fff, 0.5);
+          font-weight: 400;
+        }
+      }
+    }
+
+    &--active {
+
+      &.cb-navbar {
+
+        &__item {
+          border-bottom: 0;
+
+          &--dropdown {
+
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+
+      > .cb-navbar {
+        display: block;
+
+        &__link {
+          background-color: rgba(#2d334c, 0.4);
+        }
+
+        .cb-navbar {
+
+          &__link {
+            padding-right: 40px;
+            padding-left: 20px;
+            color: #9a9b9f;
+            font-weight: 400;
+
+            &--active {
+              color: $gold;
+            }
+          }
+        }
+      }
+    }
+
+    &--dropdown {
+
+      &::after {
+        display: block;
+        position: absolute;
+        top: 14px;
+        right: 15px;
+        transition: $default-transition;
+        content: url("data:image/svg+xml;utf8,<svg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M9 1L5 5L1 1' stroke='%239A9B9F'/></svg>");
+      }
+    }
+
+    &--notification {
+
+      .cb-navbar {
+
+        &__notification {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__link {
+    @include flex($align-items: center);
+
+    position: relative;
+    background-color: #1a1e30;
+    padding: 0 30px 0 10px;
+    min-height: 39px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &__notification {
+    @include size(5px);
+
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: $gold;
+  }
+
+  &__count {
+    @include size(27px, 17px);
+
+    position: absolute;
+    right: 30px;
+    border: 1px solid $gold;
+    border-radius: 8px;
+    text-align: center;
+    color: $gold;
+  }
+}

@@ -1,0 +1,22 @@
+---
+title: Title
+lang: en
+hasLink: false
+---
+extends ../../../layouts/_layout
+
+include ../../../layouts/header/_index
+include ../../../partials/betslip/_index
+include ../../../partials/b-accept/_index
+include ../../../partials/ip-classification-bar/_index
+include ../../../partials/ip-control-bar/_index
+include ../../../partials/cb-aside/_index
+
+block content
+  +header-in
+  main
+    +ip-classification-bar
+    +ip-control-bar
+    +betslip
+    +b-accept
+    +cb-aside

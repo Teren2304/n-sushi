@@ -1,0 +1,57 @@
+.toggle {
+  @include size(24px, 14px);
+
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #d8d8d8;
+  }
+
+  &__swipe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: $default-transition;
+    z-index: 1;
+    border: 1px solid #d8d8d8;
+    border-radius: inherit;
+    background-color: #fff;
+    width: 50%;
+  }
+
+  &__input {
+    @include size(0);
+
+    opacity: 0;
+
+    &:checked + .toggle {
+
+      &__swipe {
+        transform: translateX(100%);
+      }
+    }
+
+    &:checked ~ .toggle {
+
+      &__bg {
+        background-color: $blue;
+      }
+    }
+  }
+
+  //&--grey-200 {
+  //  background-color: rgba($grey-200, 0.5);
+  //
+  //  &__swipe {
+  //    border: 1px solid rgba($grey-200, 0.5);
+  //  }
+  //}
+}

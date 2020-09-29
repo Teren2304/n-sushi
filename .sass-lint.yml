@@ -21,7 +21,7 @@ rules:
   no-transition-all: 2
   nesting-depth:
     - 2
-    - max-depth: 4
+    - max-depth: 6
   indentation:
     - 1
     - size: tab

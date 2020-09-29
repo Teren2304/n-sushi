@@ -33,7 +33,7 @@ const config = {
     },
     dest: {
         root : destPath,
-        html : destPath,
+        html : destPath + '/pages',
         css  : destPath + '/css',
         js   : destPath + '/js',
         img  : destPath + '/img',

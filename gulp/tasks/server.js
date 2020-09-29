@@ -21,7 +21,7 @@ gulp.task('server', done => {
       }
     },
     files: [
-      `${config.dest.html  }/*.html`,
+      `${config.dest.html  }/**/*.html`,
       `${config.dest.css  }/*.css`,
       `${config.dest.img  }/**/*`
     ],

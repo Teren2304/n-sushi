@@ -1,0 +1,125 @@
+.cb-account {
+  position: relative;
+  padding: 10px;
+
+  &__cell {
+    flex: 1;
+
+    &--border {
+      position: relative;
+      padding-right: 15px;
+
+      &::after {
+        @include size(1px, 20px);
+
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background-color: #2d334c;
+        content: '';
+      }
+    }
+
+    &--right {
+      align-self: flex-start;
+      text-align: right;
+    }
+  }
+
+  &__btn {
+    @include reset-button;
+    @include size(100%, 40px);
+
+    border-radius: 2px;
+    background-color: $green;
+
+    > * {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
+  &__block {
+    @include flex(space-between, center);
+  }
+
+  &__text {
+    margin: 2px 0;
+    color: rgba(#fff, 0.5);
+
+    > * {
+      margin-right: 5px;
+    }
+
+    &--red {
+      color: $red;
+    }
+
+    &--white {
+      color: #fff;
+    }
+
+    &--10 {
+      font-size: 10px;
+    }
+
+    &--11 {
+      font-size: 11px;
+    }
+
+    &--15 {
+      font-size: 15px;
+    }
+  }
+
+  &__img {
+    @include size(60px);
+
+    flex-grow: 0;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    > * {
+      display: block;
+    }
+
+    &--small {
+      @include size(30px);
+    }
+  }
+
+  &__hr {
+    @include size(100%, 1px);
+
+    margin: 10px 0;
+    border: 0;
+    background-color: #2d334c;
+  }
+
+  &__payements {
+    @include flex(space-between, center);
+
+    margin-bottom: 15px;
+
+    > .cb-account {
+
+      &__cell {
+
+        > * {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__identify {
+    @include flex(space-between, center);
+  }
+}

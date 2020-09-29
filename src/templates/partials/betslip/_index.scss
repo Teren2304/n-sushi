@@ -1,0 +1,610 @@
+.betslip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: $default-transition;
+  opacity: 0;
+  z-index: -1;
+  background-color: rgba(#1a1e30, 0.5);
+
+  &__title,
+  &__market,
+  &__teams {
+    @include ellipsis;
+
+    margin: 4px 0;
+  }
+
+  &__remember-stake,
+  &__bonus,
+  &__info {
+    @include flex(space-between, center);
+
+    position: relative;
+    border-bottom: 1px solid rgba(#c2d3d4, 0.5);
+  }
+
+  &__bonus,
+  &__info {
+    @include size(100%, 60px);
+  }
+
+  &__advance,
+  &__balance {
+    flex: 1;
+    padding: 0 10px;
+  }
+
+  &__remove,
+  &__edit {
+    color: $blue;
+    font-size: 11px;
+  }
+
+  &__ok {
+    color: $green;
+  }
+
+  &__remember-stake {
+    @include size(100%, 55px);
+
+    padding: 0 10px;
+  }
+
+  &__wrapper {
+    @include flex($justify-content: flex-end, $direction: column);
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: $default-transition;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    background-color: #f6F8ff;
+    padding-bottom: 55px;
+    width: 100%;
+    max-width: 500px;
+    max-height: calc(100% - 50px);
+    overflow: hidden;
+  }
+
+  &__header {
+    @include flex(space-between, center);
+    @include size(100%, 33px);
+
+    flex-shrink: 0;
+    padding: 0 10px;
+  }
+
+  &__body {
+    @include overflow-y;
+  }
+
+  &__bets {
+    padding: 0 10px;
+
+    &--edit {
+
+      .betslip {
+
+        &__close {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__bet {
+    margin-bottom: 5px;
+
+    &--active {
+
+      .betslip {
+
+        &__block {
+
+          &::before {
+            background-color: $gold;
+          }
+        }
+      }
+    }
+
+    &--down {
+
+      .betslip {
+
+        &__drop {
+          display: block;
+          padding-bottom: 5px;
+        }
+      }
+    }
+
+    &--disabled {
+
+      .betslip {
+
+        &__block {
+          height: 80px;
+        }
+
+        &__bottom {
+          display: none;
+        }
+
+        //&__block {
+        //
+        //  &::after {
+        //    position: absolute;
+        //    top: 0;
+        //    right: 0;
+        //    bottom: 0;
+        //    left: 0;
+        //    z-index: 1;
+        //    background-color: rgba(#fff, 0.4);
+        //    content: '';
+        //  }
+        //}
+        //
+        //&__close {
+        //  display: none;
+        //}
+      }
+    }
+  }
+
+  &__block {
+    @include size(100%, 108px);
+
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 10px;
+    overflow: hidden;
+
+    &::before {
+      @include size(3px, 100%);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+    }
+  }
+
+  &__bottom {
+    @include flex(space-between, center);
+
+    margin-top: 5px;
+  }
+
+  &__label {
+    color: #75757c;
+    font-size: 11px;
+  }
+
+  &__win {
+    color: #75757c;
+  }
+
+  &__drop {
+    display: none;
+  }
+
+  &__wrap {
+    @include flex(space-between, center);
+  }
+
+  &__close {
+    @include size(48px);
+
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    background-color: #f6f8ff;
+    cursor: pointer;
+
+    > * {
+      position: absolute;
+      bottom: 5px;
+      left: 8px;
+    }
+  }
+
+  &__cell {
+    overflow: hidden;
+
+    &--sm {
+      @include flex(flex-end, center);
+
+      padding-left: 5px;
+      width: 130px;
+    }
+  }
+
+  &__field {
+    @include size(66px, 30px);
+    @include placeholder(rgba(#75757C, 0.5), true, 13px);
+
+    -moz-appearance: textfield;
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    background-color: #f9f9f9;
+    padding: 0 10px;
+    text-align: center;
+    color: rgba(#383a4a, 0.8);
+    font-size: 16px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__odds {
+    margin-right: 10px;
+    color: $blue;
+    font-weight: 500;
+
+    &--up {
+      color: $green;
+    }
+
+    &--down {
+      color: $red;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__market {
+    font-size: 12px;
+
+    &--blue {
+      color: $blue;
+    }
+  }
+
+  &__message {
+    margin-top: 10px;
+    padding: 0 10px;
+    text-align: center;
+    color: $red;
+    font-size: 11px;
+  }
+
+  &__teams {
+    color: #75757c;
+    font-size: 11px;
+  }
+
+  &__keyboard {
+    margin-top: 10px;
+    border: 1px solid rgba(#c2d3d4, 0.5);
+
+    &--sm {
+      margin-right: -10px;
+      margin-left: -10px;
+
+      .betslip {
+
+        &__row {
+
+          &:first-child {
+            margin-bottom: 10px;
+            box-shadow: 0 0 6px rgba(56, 71, 89, 0.2);
+          }
+
+          &:last-child {
+            border-top: 1px solid rgba(208, 208, 208, 0.35);
+            box-shadow: 0 0 6px rgba(56, 71, 89, 0.11);
+          }
+        }
+      }
+    }
+
+    &--lg {
+      box-shadow: 0 0 6px rgba(56, 71, 89, 0.11);
+    }
+  }
+
+  &__row {
+    @include flex($wrap: wrap);
+
+    border-bottom: 1px solid rgba(#c2d3d4, 0.2);
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(56, 71, 89, 0.1);
+    height: 40px;
+    overflow: hidden;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &--lg {
+      height: 50px;
+    }
+  }
+
+  &__key {
+    @include flex(center, center);
+
+    flex: 1;
+    border-right: 1px solid rgba(#c2d3d4, 0.5);
+    background-color: #fff;
+    font-size: 20px;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &--active {
+      background-color: rgba(#c2d3d4, 0.5);
+    }
+
+    &--done {
+      color: $blue;
+      font-size: 12px;
+    }
+  }
+
+  &__notification {
+    @include flex(center, center);
+
+    padding: 10px;
+    min-height: 46px;
+    font-size: 11px;
+
+    &--warning {
+      background-color: rgba($gold, 0.5);
+    }
+  }
+
+  &__footer {
+    padding: 10px;
+  }
+
+  &__placebet {
+    @include reset-button;
+    @include size(100%, 50px);
+
+    border-radius: 2px;
+    background-color: $blue;
+
+    > * {
+      margin: 0 2px;
+      color: #fff;
+    }
+
+    &--disabled {
+      background-color: rgba($blue, 0.3);
+      pointer-events: none;
+
+      > * {
+        color: #383a4a;
+      }
+    }
+  }
+
+  &__multiples {
+    margin: 0 10px 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    overflow: hidden;
+
+    &--active {
+
+      .betslip {
+
+        &__drop {
+          display: block;
+        }
+
+        &__down {
+          transform: rotateZ(180deg);
+        }
+      }
+    }
+  }
+
+  &__multiple {
+    @include size(100%, 50px);
+
+    border-bottom: 1px solid rgba(#c2d3d4, 0.5);
+    padding: 10px;
+
+    .betslip {
+
+      &__market {
+        font-weight: 700;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &--lg {
+      height: 70px;
+    }
+  }
+
+  &__dropdown {
+    @include size(100%, 35px);
+    @include flex(space-between, center);
+
+    border-bottom: 1px solid rgba(#c2d3d4, 0.5);
+    background-color: #f1f3f7;
+    padding: 0 10px;
+    color: #75757c;
+    font-size: 12px;
+  }
+
+  &__down {
+    transition: $default-transition;
+    margin-left: 10px;
+  }
+
+  &__info {
+
+    > * {
+
+      &::after {
+        @include size(1px, 31px);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(#c2d3d4, 0.5);
+        content: '';
+      }
+
+      &:last-child {
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__bonus {
+    @include size(100%, 60px);
+
+    padding: 0 10px;
+  }
+
+  &__text {
+    margin-right: 5px;
+
+    &--sm {
+      font-size: 10px;
+    }
+
+    &--green {
+      color: $green;
+    }
+
+    &--grey {
+      color: rgba(#383a4a, 0.65);
+    }
+  }
+
+  &__checkbox {
+    @include size(16px);
+
+    position: relative;
+    color: #696a76;
+
+    &::before {
+      @include size(16px);
+
+      position: absolute;
+      top: 0;
+      border: 1px solid #e7e7e7;
+      border-radius: 2px;
+      background: #fff;
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      font-size: 16px;
+      font-weight: 700;
+      content: '\2713';
+    }
+
+    &:checked {
+
+      &::after {
+        opacity: 1;
+        color: #696a76;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+      border: 0;
+    }
+  }
+
+  &__toggle {
+    @include size(20px, 12px);
+
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #b5b7c6;
+    }
+
+    &-swipe {
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      left: 1px;
+      transition: $default-transition;
+      z-index: 1;
+      border-radius: 1px;
+      background-color: #fff;
+      width: 10px;
+    }
+
+    &-input {
+      @include size(0);
+
+      opacity: 0;
+
+      &:checked + .betslip__toggle {
+
+        &-swipe {
+          transform: translateX(7px);
+        }
+      }
+
+      &:checked ~ .betslip__toggle {
+
+        &-bg {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
+  &--active {
+    opacity: 1;
+    z-index: 11;
+
+    .betslip {
+
+      &__wrapper {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

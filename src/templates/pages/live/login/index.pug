@@ -1,0 +1,30 @@
+---
+title: Title
+lang: en
+hasLink: false
+---
+extends ../../../layouts/_layout
+
+include ../../../layouts/header/_index
+include ../../../partials/betslip/_index
+include ../../../partials/b-accept/_index
+include ../../../partials/m-login/_index
+include ../../../partials/s-login/_index
+include ../../../partials/q-popup/_index
+include ../../../partials/cb-aside/_index
+
+block content
+  +header-logout
+  main
+    +m-login
+    +betslip
+    +b-accept
+    //Add s-login--active
+    +s-login
+    //Add q-popup--active
+    +q-popup-1
+    +q-popup-2
+    +q-popup-3
+    +q-popup-4
+    +cb-aside
+

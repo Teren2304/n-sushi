@@ -1,0 +1,65 @@
+.h-menu {
+  @include flex(flex-start, center);
+
+  margin-top: 10px;
+  border-bottom: 1px solid #2f3345;
+  overflow: hidden;
+
+  &__item {
+    @include flex(center, center, column);
+
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 5px;
+    padding-top: 5px;
+    min-width: 60px;
+    height: 60px;
+
+    &::after {
+      @include size(0, 2px);
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $blue;
+      content: '';
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+
+      &::after {
+        width: 100%;
+      }
+
+      .h-menu {
+
+        &__icon {
+          opacity: 1;
+
+          path,
+          g {
+            fill: $gold;
+          }
+        }
+
+        &__text {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    opacity: 0.5;
+  }
+
+  &__text {
+    margin-top: 2px;
+    color: rgba(#fff, 0.5);
+  }
+}

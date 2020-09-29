@@ -1,0 +1,11 @@
+@mixin reset-button {
+  @include flex(center, center);
+
+  margin: 0;
+  outline: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  overflow: visible;
+}
