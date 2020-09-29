@@ -1,5 +1,3 @@
-# Enestech
-
 ## Start project
 
 *Install dependencies* - `yarn`
