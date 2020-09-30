@@ -67,20 +67,46 @@
   }
 
   &__bet {
-    @include flex(space-between, center);
-    @include size(100%, 75px);
+    @include size(100%, 108px);
 
     border-bottom: 1px dashed rgba(#c2d3d4, 0.5);
     background-color: #fff;
     padding: 10px;
     overflow: hidden;
 
-    &:first-child {
-      border-bottom: 1px solid rgba(#c2d3d4, 0.5);
-    }
-
     &:last-child {
       border-bottom: 0;
+    }
+  }
+
+  &__wrap {
+    @include flex(space-between, center);
+  }
+
+  &__bottom {
+    @include flex(space-between, center);
+
+    margin-top: 5px;
+  }
+
+  &__field {
+    @include size(66px, 30px);
+    @include placeholder(rgba(#75757C, 0.5), true, 13px);
+
+    -moz-appearance: textfield;
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    background-color: #f9f9f9;
+    padding: 0 10px;
+    text-align: center;
+    color: rgba(#383a4a, 0.8);
+    font-size: 16px;
+    margin-left: 10px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
     }
   }
 

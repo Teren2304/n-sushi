@@ -1,0 +1,389 @@
+// Sports color
+$sport-color: (
+  'american_football': #629D5B,
+  'bandy': #4ED7FF,
+  'baseball': #FF8E00,
+  'basketball': #FF845C,
+  'beach_volleyball': #FFAF3F,
+  'bowls': #6488A7,
+  'boxing': #FF1515,
+  'cricket': #D86308,
+  'cycling': #79B35C,
+  'darts': #ED4830,
+  'e-sports': #C364C5,
+  'floorball': #985970,
+  'formula_1': #578986,
+  'futsal': #CABB76,
+  'golf': #70C448,
+  'handball': #D37831,
+  'ice_hockey': #00B6EC,
+  'motorbikes': #BADBAD,
+  'pool': #B0D437,
+  'rugby_league': #D79A7E,
+  'snooker': #E5191A,
+  'soccer': #30A01A,
+  'speedway': #37B0D4,
+  'table_tennis': #5E9FDE,
+  'tennis': #E1E31C,
+  'volleyball': #FFAF3D,
+  'water_polo': #A6CAF0
+);
+
+.ip-classification-header {
+  @include size(100%, 38px);
+
+  position: relative;
+  background-color: #1a1e30;
+
+  @each $status, $color in $sport-color {
+
+    &--#{$status} {
+      background: linear-gradient(0deg, rgba(56, 58, 74, 0.3), rgba(56, 58, 74, 0.3)), linear-gradient(90deg, #{$color} 0%, #{$color} 100%);
+    }
+  }
+
+  &--active {
+    height: auto;
+
+    .ip-classification-header {
+
+      &__dropdown {
+        display: block;
+      }
+
+      &__league {
+
+        .ip-classification-header {
+
+          &__text {
+            color: $gold;
+          }
+
+          &__icon {
+
+            path {
+              fill: $gold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__wrap {
+    @include flex(space-between, center);
+    @include size(100%);
+
+    padding: 10px;
+  }
+
+  &__sports {
+    @include flex($align-items: center);
+
+    overflow: hidden;
+  }
+
+  &__league {
+    @include flex($align-items: center);
+
+    flex-shrink: 0;
+    margin-right: auto;
+    margin-left: 10px;
+
+    &--active {
+
+      .ip-classification-header {
+
+        &__text {
+          color: $gold;
+        }
+
+        &__icon {
+
+          path {
+            fill: $gold;
+          }
+        }
+      }
+    }
+  }
+
+  &__streaming {
+    @include flex($align-items: center);
+
+    flex-grow: 0;
+    margin-left: 5px;
+
+    &--active {
+
+      label {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__text {
+    color: #fff;
+
+    &--alpha-white {
+      opacity: 0.5;
+    }
+
+    &--12 {
+      font-size: 12px;
+    }
+
+    &--ellipsis {
+      @include ellipsis;
+    }
+  }
+
+  &__icon {
+    @include size(16px);
+
+    margin-right: 8px;
+  }
+
+  &__toggle {
+    @include size(20px, 10px);
+
+    position: relative;
+    margin-left: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(#d8d8d8, 0.5);
+    }
+
+    &-swipe {
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      left: 1px;
+      transition: $default-transition;
+      z-index: 1;
+      border-radius: 50%;
+      background-color: #fff;
+      width: 8px;
+    }
+
+    &-input {
+      @include size(0);
+
+      opacity: 0;
+
+      &:checked + .ip-classification-header__toggle {
+
+        &-swipe {
+          transform: translateX(10px);
+        }
+      }
+
+      &:checked ~ .ip-classification-header__toggle {
+
+        //&-bg {
+        //  background-color: $blue;
+        //}
+      }
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #232737;
+    min-height: 400px;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__list {
+    @include overflow-y;
+
+    margin-top: 10px;
+    padding: 10px;
+    max-height: 336px;
+  }
+
+  &__item {
+    @include flex(flex-start, center);
+
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    margin-left: 5px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &__checkbox {
+    @include size(12px);
+
+    position: relative;
+    color: #696a76;
+
+    &::before {
+      @include size(12px);
+
+      position: absolute;
+      top: 0;
+      border: 1px solid $gold;
+      border-radius: 2px;
+      background: transparent;
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      font-size: 12px;
+      content: '\2713';
+    }
+
+    &:checked {
+
+      &::after {
+        opacity: 1;
+        color: $gold;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+      border: 0;
+    }
+  }
+
+  &__search {
+    @include flex(space-between, center);
+
+    padding: 10px 10px 0;
+
+    .h-search {
+      flex: 1;
+      margin-right: 10px;
+    }
+  }
+
+  &__options {
+    @include flex(center, center);
+    @include size(100%, 64px);
+
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  &__btn {
+    @include reset-button;
+    @include size(76px, 24px);
+
+    margin: 0 5px;
+    border-radius: 2px;
+
+    &--reset {
+
+      > * {
+        color: #9a9b9f;
+        font-size: 12px;
+      }
+    }
+
+    &--ok {
+      background-color: $gold;
+
+      > * {
+        font-size: 11px;
+      }
+    }
+  }
+
+  &__drop {
+    position: relative;
+    z-index: 3;
+    margin-left: 5px;
+
+    &--active {
+
+      .ip-classification-header {
+
+        &__drop {
+
+          &-toggle {
+
+            &::after {
+              transform: translateY(-50%) rotate(180deg);
+            }
+          }
+
+          &-menu {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &-toggle {
+      position: relative;
+      padding-right: 15px;
+      white-space: nowrap;
+      color: #fff;
+
+      &::after {
+        @include flex(center, center);
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        transition: $default-transition;
+        height: 10px;
+        content: url("data:image/svg+xml;utf8,<svg width='10' height='10' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M9 1L5 5L1 1' stroke='%23fff'/></svg>");
+      }
+    }
+
+    &-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 2;
+      background-color: #f1f3f7;
+      min-width: 150px;
+    }
+
+    &-item {
+      @include flex($align-items: center);
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 5px 10px;
+      font-size: 11px;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &--active {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

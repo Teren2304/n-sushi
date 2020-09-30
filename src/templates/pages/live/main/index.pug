@@ -10,13 +10,28 @@ include ../../../partials/betslip/_index
 include ../../../partials/b-accept/_index
 include ../../../partials/ip-classification-bar/_index
 include ../../../partials/ip-control-bar/_index
+include ../../../partials/ip-competition/_index
 include ../../../partials/cb-aside/_index
+include ../../../partials/ip-classification-header/_index
 
 block content
   +header-in
-  main
+  .main
     +ip-classification-bar
     +ip-control-bar
+
+    +ip-classification-header.ip-classification-header--soccer
+    +ip-competition(true)
+    +ip-competition
+    +ip-classification-header-2.ip-classification-header--basketball
+    +ip-competition(true)
+    +ip-competition(true)
+    +ip-classification-header-3.ip-classification-header--tennis
+    +ip-competition
+    +ip-competition
+
     +betslip
+
     +b-accept
+
     +cb-aside

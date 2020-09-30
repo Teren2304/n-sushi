@@ -63,7 +63,8 @@
     &--dropdown {
 
       &::after {
-        display: block;
+        @include flex(center, center);
+
         position: absolute;
         top: 14px;
         right: 15px;

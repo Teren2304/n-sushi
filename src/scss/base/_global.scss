@@ -3,6 +3,7 @@
 }
 
 body {
+  position: relative;
   background-color: #000;
   min-width: 320px;
   max-width: 100%;
@@ -15,6 +16,9 @@ body {
   font-weight: 400;
 }
 
-main {
-  padding-top: 60px;
+.page {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  width: 100%;
+  overflow: hidden;
 }
