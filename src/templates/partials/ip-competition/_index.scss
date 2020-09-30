@@ -1,6 +1,5 @@
 .ip-competition {
   background-color: #f1f3f7;
-  padding: 0 5px;
   width: 100%;
 
   &__market,
@@ -11,6 +10,12 @@
   &__header {
     @include size(100%, 40px);
     @include flex($align-items: center);
+
+    padding: 0 5px;
+  }
+
+  &__wrapper {
+    padding: 0 5px 1px;
   }
 
   &__flag {
@@ -31,8 +36,8 @@
     @include size(14px);
 
     flex-shrink: 0;
-    margin-left: 5px;
     margin-right: 10px;
+    margin-left: 5px;
 
     &--active {
 
@@ -57,10 +62,15 @@
     @include flex($direction: column);
     @include size(100%, 106px);
 
+    margin-bottom: 5px;
     border-radius: 2px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
     background-color: #fff;
     padding: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__row {

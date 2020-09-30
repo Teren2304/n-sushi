@@ -1,0 +1,95 @@
+.ips-table {
+  background-color: #f1f3f7;
+  padding: 5px;
+  width: 100%;
+
+  &__favourite,
+  &__stream {
+    opacity: 0.3;
+    margin: 0 auto;
+    width: 19px;
+  }
+
+  &__row {
+    @include flex(center, center);
+
+    margin-bottom: 5px;
+    border-radius: 2px;
+    background-color: #fff;
+    height: 90px;
+  }
+
+  &__cell {
+    @include flex($justify-content: space-between, $direction: column);
+
+    position: relative;
+    padding: 10px 0;
+    height: 100%;
+    overflow: hidden;
+
+    &:nth-child(1) {
+      flex-shrink: 0;
+      width: 50px;
+      text-align: center;
+    }
+
+    &:nth-child(2) {
+      flex-grow: 1;
+      padding-left: 10px;
+    }
+
+    &--border {
+
+      &::after {
+        @include size(1px, 44px);
+
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        background-color: rgba(#c2d3d4, 0.5);
+        content: '';
+      }
+    }
+  }
+
+  &__time {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &__favourite {
+
+    &--active {
+      opacity: 1;
+
+      svg {
+
+        path {
+          fill: $gold;
+          stroke: $gold;
+        }
+      }
+    }
+  }
+
+  &__stream {
+
+    &--active {
+      opacity: 1;
+
+      svg {
+
+        path {
+          fill: $red;
+        }
+      }
+    }
+  }
+
+  &__text {
+
+    &--ellipsis {
+      @include ellipsis;
+    }
+  }
+}

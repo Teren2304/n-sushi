@@ -6,10 +6,22 @@ hasLink: false
 extends ../../../layouts/_layout
 
 include ../../../layouts/header/_index
+include ../../../partials/betslip/_index
+include ../../../partials/ip-classification-bar/_index
+include ../../../partials/ip-control-bar/_index
+include ../../../partials/ip-competition/_index
 include ../../../partials/cb-aside/_index
+include ../../../partials/ip-classification-header/_index
+include ../../../partials/ips-table/_index
 
 block content
   +header-in
   .main
-    p Schedule
+    +ip-classification-bar
+    +ip-control-bar
+    +ip-classification-header-4(true).ip-classification-header--date
+    +ips-table
+
+    +betslip
+
     +cb-aside

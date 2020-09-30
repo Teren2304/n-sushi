@@ -114,3 +114,18 @@ mixin ip-classification-header-3
         p.ip-classification-header__text.ip-classification-header__text--ellipsis Soccer
 
       p.ip-classification-header__text 123
+
+
+mixin ip-classification-header-4(streaming)
+  .ip-classification-header&attributes(attributes)
+    .ip-classification-header__wrap
+      .ip-classification-header__sports
+        p.ip-classification-header__text.ip-classification-header__text--11.ip-classification-header__text--ellipsis Sat. 14 Dec
+
+      if(streaming)
+        .ip-classification-header__streaming
+          label(for="streaming").ip-classification-header__text.ip-classification-header__text--alpha-white.ip-classification-header__text--ellipsis Live Streaming
+          label.ip-classification-header__toggle
+            input(type="checkbox" id="streaming").ip-classification-header__toggle-input
+            span.ip-classification-header__toggle-swipe
+            span.ip-classification-header__toggle-bg

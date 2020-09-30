@@ -35,6 +35,10 @@ $sport-color: (
   position: relative;
   background-color: #1a1e30;
 
+  &--date {
+    background-color: $blue;
+  }
+
   @each $status, $color in $sport-color {
 
     &--#{$status} {
@@ -127,6 +131,10 @@ $sport-color: (
 
     &--alpha-white {
       opacity: 0.5;
+    }
+
+    &--11 {
+      font-size: 11px;
     }
 
     &--12 {
