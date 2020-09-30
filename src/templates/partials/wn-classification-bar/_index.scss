@@ -1,0 +1,86 @@
+.wn-classification-bar {
+  margin-top: 1px;
+  background-color: #1a1e30;
+  padding: 16px 10px;
+  width: 100%;
+  overflow: hidden;
+
+  &__wrap {
+    @include flex($align-items: center);
+
+    width: 100%;
+  }
+
+  &__header {
+    @include flex(space-between, center);
+
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    @include size(auto, 28px);
+    @include flex(center, center);
+
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-color: #2f3346;
+    padding: 0 10px;
+
+    &--active {
+      box-shadow: 0 0 6px rgba(9, 13, 18, 0.4);
+
+      .wn-classification-bar {
+
+        &__text {
+          color: $gold;
+        }
+
+        &__icon {
+
+          svg {
+
+            g,
+            rect,
+            path {
+              opacity: 1;
+              fill: $gold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &__text {
+    transition: $default-transition;
+    text-transform: capitalize;
+    color: #8c8e97;
+
+    &--blue {
+      color: $blue;
+    }
+  }
+
+  &__icon {
+    @include size(16px);
+
+    margin-right: 5px;
+    overflow: hidden;
+
+    svg {
+
+      g,
+      rect,
+      path {
+        transition: $default-transition;
+        opacity: 0.5;
+      }
+    }
+  }
+}
