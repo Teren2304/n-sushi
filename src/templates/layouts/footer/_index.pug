@@ -1,0 +1,44 @@
+include ../../partials/logo/_index
+include ../../partials/social/_index
+
+mixin footer
+  footer.footer&attributes(attributes)
+    -
+      var items = [
+        'Unit 3 Fen Place',
+        'Farm East Street',
+        'Turners Hill',
+        'West Sussex',
+        'RH10 4QA'
+      ]
+
+    .container
+      .flex
+        .cell
+          +logo-dark
+        .cell
+          ul
+            li
+              h5.h5.h5--medium.h5--white London
+
+            each item in items
+              li
+                p.font= item
+        .cell
+          ul
+            li
+              h5.h5.h5--medium.h5--white New York
+
+            each item in items
+              li
+                p.font= item
+        .cell
+          ul
+            li
+              h5.h5.h5--medium.h5--white Georgia
+
+            each item in items
+              li
+                p.font= item
+        .cell
+          +social

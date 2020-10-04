@@ -1,0 +1,5 @@
+.logo {
+  @include size(fvw(114), fvh(80));
+
+  display: block;
+}

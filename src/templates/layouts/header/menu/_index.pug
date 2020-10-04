@@ -1,0 +1,16 @@
+mixin menu
+  -
+    var items = [
+      'Home',
+      'Our Story',
+      'Menu',
+      'Locations',
+      'Click & Collect',
+      'Book a Table',
+      'Careers',
+      'Allergens',
+      'Contact'
+    ]
+  menu.menu&attributes(attributes)
+    each item in items
+      a(href="#").font.font--white.font--semibold.menu__item= item

@@ -1,10 +1,21 @@
-@import 'h-nav/index';
-@import 'h-toggle/index';
-@import 'h-logo/index';
-@import 'h-aside/index';
-@import 'h-service/index';
-@import 'h-search/index';
-@import 'h-menu/index';
-@import 'h-submenu/index';
-@import 'h-category/index';
-@import 'h-account/index';
+@import 'menu/index';
+
+.header {
+  @include size(100%, 100vh);
+  @include flex(center, center, column);
+
+  position: relative;
+  background-color: $secondary;
+
+  &__logo {
+    position: absolute;
+    bottom: fvw(100);
+    left: fvw(110);
+  }
+
+  &__toggle {
+    position: absolute;
+    top: fvw(65);
+    left: fvw(65);
+  }
+}

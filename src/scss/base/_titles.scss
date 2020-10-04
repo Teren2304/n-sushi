@@ -1,0 +1,55 @@
+$title-colors: (
+  'primary': 	$primary,
+  'white':	#fff
+);
+
+$title-sizes: (
+  '1': 8.59vw,    //165
+  '2': 6.875vw,   //132
+  '3': 3.54vw,    //68
+  '4': 2.08vw,    //45
+  '5': 1.66vw,    //32
+  '6': 1.3vw      //30
+);
+
+$title-weights: (
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extra-bold': 800
+);
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-bottom: fvh(20);
+  line-height: 1;
+  color: $font-color;
+  font-family: $font-family;
+  font-weight: 400;
+
+  @each $status, $text-color in $title-colors {
+
+    &--#{$status} {
+      color: $text-color;
+    }
+  }
+
+  @each $status, $text-weight in $font-weights {
+
+    &--#{$status} {
+      font-weight: $text-weight;
+    }
+  }
+}
+
+@each $index, $status in $title-sizes {
+
+  .h#{$index},
+  h#{$index} {
+    font-size: $status;
+  }
+}

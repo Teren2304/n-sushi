@@ -1,0 +1,16 @@
+.title {
+  display: inline-flex;
+  position: relative;
+  padding-right: fvw(50);
+
+  &::after {
+    @include size(fvw(25));
+
+    position: absolute;
+    top: 65%;
+    right: 0;
+    border-radius: 50%;
+    background-color: $primary;
+    content: '';
+  }
+}

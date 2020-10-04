@@ -1,5 +1,4 @@
 include ../data/all
-include ../components/preloader/_index
 
 doctype html
 html
@@ -7,10 +6,8 @@ html
     include _head
 
   body
-    +preloader
 
-    .page
-      block content
+    block content
 
     block scripts
       script(src="js/app.js")

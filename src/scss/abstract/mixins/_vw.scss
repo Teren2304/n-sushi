@@ -1,0 +1,7 @@
+@mixin mvw($value: 0) {
+  width: $value / ($width / 100) + vw;
+}
+
+@function fvw($value) {
+  @return $value / ($width / 100) + vw;
+}

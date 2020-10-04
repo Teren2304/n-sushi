@@ -1,1 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+$font-colors: (
+  'primary': $primary,
+  'white': #fff
+);
+
+$font-sizes: (
+  'xs': 0.93vw,   //18
+  'xm': 0.94vw,   //19
+  'lg': 1.4vw,    //27
+  'xlg': 1.56vw //30
+);
+
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extra-bold': 800
+);
+
+.font {
+  line-height: 1;
+  color: $font-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: 400;
+
+  @each $status, $text-color in $font-colors {
+
+    &--#{$status} {
+      color: $text-color;
+    }
+  }
+
+  @each $status, $text-weight in $font-weights {
+
+    &--#{$status} {
+      font-weight: $text-weight;
+    }
+  }
+
+  @each $status, $text-size in $font-sizes {
+
+    &--#{$status} {
+      font-size: $text-size;
+    }
+  }
+}

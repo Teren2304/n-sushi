@@ -6,6 +6,12 @@
 
 @import 'abstract/index';
 
+//
+// Colors
+//
+
+@import 'base/colors';
+
 
 //
 // Variables
@@ -15,16 +21,17 @@
 
 
 //
-// Non Compiled Files
+// Typography
 //
 
 @import 'base/fonts';
 
+
 //
-// Colors
+// Typography
 //
 
-@import 'base/colors';
+@import 'base/titles';
 
 
 //
@@ -32,6 +39,13 @@
 //
 
 @import 'base/index';
+
+
+//
+// Helpers classes
+//
+
+@import 'base/helpers';
 
 
 //

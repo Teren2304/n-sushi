@@ -1,0 +1,17 @@
+.footer {
+  background-color: $primary;
+  padding: fvh(90) 0;
+  width: 100%;
+
+  .cell {
+    flex: 2;
+
+    &:last-child {
+      flex: 6;
+    }
+  }
+
+  &--white {
+    background-color: #fff;   //if it needed
+  }
+}

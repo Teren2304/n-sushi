@@ -1,0 +1,38 @@
+.toggle {
+  @include flex(center, center, column);
+  @include size(fvw(48));
+
+  position: relative;
+  transition: $default-transition;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+
+  &__item {
+    @include size(fvw(30), fvh(2));
+
+    transition: $default-transition;
+    margin: fvh(2) 0;
+    background-color: #000;
+  }
+
+  &--active {
+    justify-content: center;
+    z-index: 2;
+
+    .toggle {
+
+      &__item {
+
+        &:nth-child(1) {
+          transform: translateY(fvh(2)) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translateY(-#{fvh(2)}) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

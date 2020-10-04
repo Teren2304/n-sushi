@@ -1,9 +1,12 @@
-include h-nav/_index
+include ../../partials/toggle/_index
+include ../../partials/logo/_index
+include ../../partials/title/_index
 
-mixin header-in
+mixin header
   header.header&attributes(attributes)
-    +h-nav-in
-
-mixin header-logout
-  header.headerv&attributes(attributes)
-    +h-nav-logout
+    .header__toggle
+      +toggle
+    .header__logo
+      +logo
+    .header__title
+      +title('locations')

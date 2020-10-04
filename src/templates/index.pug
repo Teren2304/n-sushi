@@ -1,0 +1,22 @@
+---
+title: Title
+lang: en
+hasLink: false
+---
+extends ./layouts/_layout
+
+include ./layouts/header/_index
+include ./layouts/footer/_index
+include ./layouts/aside/_index
+
+block content
+  +header
+  +aside
+  main.main
+    section.section
+      .container
+        p 1
+    section.section
+      .container
+        p 2
+  +footer

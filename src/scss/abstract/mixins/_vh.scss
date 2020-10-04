@@ -1,0 +1,7 @@
+@mixin mvh($value: 0) {
+  height: $value / ($height / 100) + vh;
+}
+
+@function fvh($value) {
+  @return $value / ($height / 100) + vh;
+}

@@ -1,0 +1,14 @@
+.menu {
+
+  &__item {
+    @include flex($align-items: center);
+
+    margin-bottom: fvh(20);
+    font-size: 2.34vw;
+
+    &--active,
+    &:hover {
+      color: $primary;
+    }
+  }
+}

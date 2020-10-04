@@ -1,23 +1,29 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   position: relative;
-  background-color: #000;
   min-width: 320px;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  line-height: 15px;
-  color: #232737;
-  font-family: Roboto, sans-serif;
-  font-size: 13px;
+  line-height: 1;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.04vw;
   font-weight: 400;
 }
 
-.page {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  width: 100%;
+.section {
+  @include size(100%, 100vh);
+
+  border: 1px solid #f00;
+  background-color: $secondary;
+
+  &--white {
+    background-color: #fff;   //if it needed
+  }
+}
+
+.container {
+  @include mvw(1665);
+
+  margin: 0 auto;
+  border: 1px solid #f00;
 }

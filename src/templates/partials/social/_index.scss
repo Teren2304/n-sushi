@@ -1,0 +1,19 @@
+.social {
+
+  &__item {
+    @include size(fvw(71));
+
+    margin: 0 fvw(13);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__wrap {
+
+    &:first-child {
+      margin-bottom: fvh(45);
+    }
+  }
+}
