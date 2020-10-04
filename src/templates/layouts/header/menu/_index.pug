@@ -1,16 +1,43 @@
 mixin menu
   -
     var items = [
-      'Home',
-      'Our Story',
-      'Menu',
-      'Locations',
-      'Click & Collect',
-      'Book a Table',
-      'Careers',
-      'Allergens',
-      'Contact'
+      {
+        text: 'Home',
+        link: 'index.html'
+      },
+      {
+        text: 'Our Story',
+        link: 'story.html'
+      },
+      {
+        text: 'Menu',
+        link: '#'
+      },
+      {
+        text: 'Locations',
+        link: '#'
+      },
+      {
+        text: 'Click & Collect',
+        link: '#'
+      },
+      {
+        text: 'Book a Table',
+        link: '#'
+      },
+      {
+        text: 'Careers',
+        link: '#'
+      },
+      {
+        text: 'Allergens',
+        link: '#'
+      },
+      {
+        text: 'Contact',
+        link: '#'
+      }
     ]
   menu.menu&attributes(attributes)
     each item in items
-      a(href="#").font.font--white.font--semibold.menu__item= item
+      a(href=item.link).font.font--white.font--semibold.menu__item= item.text
