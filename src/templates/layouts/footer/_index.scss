@@ -3,7 +3,17 @@
   padding: fvh(90) 0;
   width: 100%;
 
-  .cell {
+  .link {
+    display: block;
+
+    &--active,
+    &:hover {
+      transform: translateX(10px);
+      color: #fff;
+    }
+  }
+
+  &__cell {
     flex: 2;
 
     &:last-child {

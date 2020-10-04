@@ -13,7 +13,6 @@ body {
 .section {
   @include size(100%, 100vh);
 
-  border: 1px solid #f00;
   background-color: $secondary;
 
   &--white {
@@ -25,5 +24,4 @@ body {
   @include mvw(1665);
 
   margin: 0 auto;
-  border: 1px solid #f00;
 }

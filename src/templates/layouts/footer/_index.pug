@@ -14,31 +14,31 @@ mixin footer
 
     .container
       .flex
-        .cell
+        .footer__cell
           +logo-dark
-        .cell
-          ul
-            li
+        .footer__cell
+          ul.list
+            li.list__item
               h5.h5.h5--medium.h5--white London
 
             each item in items
-              li
-                p.font= item
-        .cell
-          ul
-            li
+              li.list__item
+                a.font.link= item
+        .footer__cell
+          ul.list
+            li.list__item
               h5.h5.h5--medium.h5--white New York
 
             each item in items
-              li
-                p.font= item
-        .cell
-          ul
-            li
+              li.list__item
+                a.font.link= item
+        .footer__cell
+          ul.list
+            li.list__item
               h5.h5.h5--medium.h5--white Georgia
 
             each item in items
-              li
-                p.font= item
-        .cell
+              li.list__item
+                a.font.link= item
+        .footer__cell
           +social
