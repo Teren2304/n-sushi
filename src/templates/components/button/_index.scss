@@ -1,3 +1,36 @@
 .btn {
   @include reset-button;
+
+  height: fvh(44);
+
+  &__icon {
+    @include size(fvw(70), 100%);
+
+    background-color: #fff;
+    padding: fvw(3);
+  }
+
+  &__text {
+    padding: 0 fvw(40);
+  }
+
+  &--sm {
+    height: fvh(26);
+  }
+
+  &--lg {
+    height: fvh(86);
+  }
+
+  &--primary {
+    background-color: $primary;
+  }
+
+  &--secondary {
+    background-color: $secondary;
+  }
+
+  &--green {
+    background-color: $green;
+  }
 }

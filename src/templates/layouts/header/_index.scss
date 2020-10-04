@@ -18,4 +18,11 @@
     top: fvw(65);
     left: fvw(65);
   }
+
+  &__btn {
+    position: absolute;
+    bottom: fvw(100);
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
