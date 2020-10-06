@@ -1,0 +1,59 @@
+.section {
+
+  &--careers {
+    padding-top: fvh(80);
+
+    .container {
+      @include flex(center, center, column);
+
+      height: 100%;
+    }
+
+    .wrapper {
+      position: relative;
+      flex-grow: 1;
+      margin-top: fvh(70);
+      width: 100%;
+    }
+
+    .circle {
+      position: absolute;
+
+      &--172 {
+        right: 0;
+        bottom: fvh(76);
+      }
+
+      &--314 {
+        top: 0;
+        right: fvw(133);
+
+        > * {
+          font-size: 3.125vw;
+          font-weight: 600;
+        }
+      }
+
+      &--378 {
+        top: fvh(142);
+        left: fvw(700);
+
+        > * {
+          color: #fff;
+          font-size: 4.16vw;
+          font-weight: 600;
+        }
+      }
+
+      &--458 {
+        top: 0;
+        left: fvw(134);
+
+        > * {
+          font-size: 2.55vw;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

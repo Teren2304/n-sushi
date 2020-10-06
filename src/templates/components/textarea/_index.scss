@@ -1,0 +1,9 @@
+.textarea {
+  @include size(100%, fvh(138));
+
+  border: 1px solid #fff;
+  background-color: transparent;
+  resize: none;
+  color: #fff;
+  font-size: 1.04vw;
+}

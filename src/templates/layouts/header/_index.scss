@@ -9,10 +9,11 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 
   &__content {
     @include size(100%);
-    @include flex(center, center, column);
+    @include flex(center, center);
 
     position: relative;
     z-index: 1;
@@ -24,6 +25,11 @@
     left: fvw(110);
   }
 
+  &__title {
+    align-self: flex-start;
+    margin-top: fvh(453);
+  }
+
   &__toggle {
     position: absolute;
     top: fvw(65);
@@ -33,7 +39,7 @@
 
   &__btn {
     position: absolute;
-    bottom: fvw(100);
+    bottom: fvw(106);
     left: 50%;
     transform: translateX(-50%);
   }
@@ -51,9 +57,11 @@
   }
 
   &__img {
+    @include size(fvw(720), fvw(500));
+
     position: absolute;
     right: fvw(75);
-    bottom: fvw(100);
+    bottom: fvw(50);
   }
 
   &--shadow {

@@ -13,15 +13,17 @@ body {
 .section {
   @include size(100%, 100vh);
 
+  position: relative;
   background-color: $secondary;
 
   &--white {
-    background-color: #fff;   //if it needed
+    background-color: #fff;
   }
 }
 
 .container {
   @include mvw(1665);
 
+  position: relative;
   margin: 0 auto;
 }

@@ -1,0 +1,16 @@
+mixin form
+  form.form&attributes(attributes)
+    p.font.font--white.font--xlg.form__title contact us
+    .form__item
+      p.font.font--white.font--xs.form__text name
+      input(type="text" name="name").field
+    .form__item
+      p.font.font--white.font--xs.form__text e-mail
+      input(type="email" name="email").field
+    .form__item
+      p.font.font--white.font--xs.form__text subject
+      textarea(name="subject").textarea
+    .form__item
+      .flex.align-right
+        button(type="submit").btn.btn--sm.btn--secondary
+          span.font.font--white.font--xs send

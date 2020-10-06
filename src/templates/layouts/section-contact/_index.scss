@@ -1,0 +1,26 @@
+.section {
+
+  &--contact {
+
+    .container {
+      height: 100%;
+    }
+
+    .flex {
+      @include size(100%);
+    }
+
+    .cell {
+      width: 50%;
+    }
+
+    .logo {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .form {
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.section {
+
+  &--gallery {
+    height: unset;
+    min-height: 100vh;
+
+    .flex {
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      &:nth-child(3n + 1) {
+        background-color: $primary;
+
+        .font,
+        .h3 {
+          color: #fff;
+        }
+      }
+
+      &:nth-child(3n + 2) {
+        background-color: $secondary;
+
+        .font,
+        .h3 {
+          color: #fff;
+        }
+      }
+
+      &:nth-child(3n + 3) {
+        background-color: #fff;
+      }
+    }
+
+    .cell {
+      @include flex(center, center, column);
+      @include size(50%, fvh(540));
+
+      overflow: hidden;
+
+      &--text {
+        padding: 0 fvw(160);
+      }
+    }
+
+    .img {
+      @include size(100%);
+
+      display: block;
+      object-fit: cover;
+    }
+
+    .h3 {
+      margin-bottom: fvh(10);
+    }
+  }
+}

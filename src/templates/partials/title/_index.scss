@@ -1,7 +1,7 @@
 .title {
   display: inline-flex;
   position: relative;
-  padding-right: fvw(50);
+  padding-right: fvw(35);
 
   &::after {
     @include size(fvw(25));
@@ -12,5 +12,32 @@
     border-radius: 50%;
     background-color: $primary;
     content: '';
+  }
+
+  &--xs {
+    padding-right: fvw(25);
+
+    &::after {
+      @include size(fvw(14));
+
+      top: 55%;
+    }
+
+    .title {
+
+      &__text {
+        font-size: 3.75vw;
+      }
+    }
+  }
+
+  &--sm {
+
+    .title {
+
+      &__text {
+        font-size: 5.98vw;
+      }
+    }
   }
 }

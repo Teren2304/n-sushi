@@ -1,0 +1,67 @@
+.section {
+
+  &--location {
+
+    .picture {
+      @include size(fvw(480), fvh(505));
+
+      position: absolute;
+      top: fvh(328);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .img {
+      @include size(100%);
+
+      display: block;
+      object-fit: contain;
+    }
+
+    .list {
+      position: absolute;
+      top: 50%;
+    }
+
+    .info {
+      position: absolute;
+
+      &--left {
+        flex-direction: row-reverse;
+
+        .list {
+          left: -#{fvw(30)};
+          transform: translate(-100%, -#{fvw(8)});
+        }
+      }
+
+      &--right {
+
+        .list {
+          left: 100%;
+          transform: translate(fvw(48), -#{fvw(8)});
+        }
+      }
+
+      &--xs {
+        bottom: fvh(114);
+        left: fvw(596);
+      }
+
+      &--sm {
+        top: fvh(280);
+        left: fvw(456);
+      }
+
+      &--md {
+        top: fvh(676);
+        left: fvw(1274);
+      }
+
+      &--lg {
+        top: -#{fvh(60)};
+        right: fvw(364);
+      }
+    }
+  }
+}

@@ -2,4 +2,8 @@
   @include size(fvw(114), fvh(80));
 
   display: block;
+
+  &--big {
+    @include size(fvw(560), fvh(66));
+  }
 }

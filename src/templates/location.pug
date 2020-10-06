@@ -8,9 +8,11 @@ extends ./layouts/_layout
 include ./layouts/header/_index
 include ./layouts/footer/_index
 include ./layouts/aside/_index
-include ./layouts/section-story/_index
+include ./layouts/section-location/_index
+
 block content
-  +header('location', 2).header--shadow(style="background-image: url(./img/header/header.png)")
+  +header('location').header--shadow(style="background-image: url(./img/header/header.png)")
   +aside
   main.main
+    +section-location.section--white.section--location
   +footer

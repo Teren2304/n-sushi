@@ -1,0 +1,35 @@
+include ../../partials/circle/_index
+
+mixin section-location
+  section.section&attributes(attributes)
+
+    .info.info--xs.info--left
+      +circle.circle--44
+      ul.list
+        li.list__item
+          h6.h6.h6--extra-bold.text-uppercase GEORGIA
+
+    .info.info--sm
+      +circle.circle--78
+
+    .info.info--md.info--right
+      +circle.circle--156
+      ul.list
+        li.list__item
+          h6.h6.h6--extra-bold.text-uppercase London
+        li.list__item
+          p Unit 3 Fen Place
+        li.list__item
+          p Farm East Street
+        li.list__item
+          p Turners Hill
+        li.list__item
+          p West Sussex
+        li.list__item
+          p RH10 4QA
+
+    .info.info--lg
+      +circle.circle--226
+
+    .picture
+      img(src="/img/location/picture.png").img

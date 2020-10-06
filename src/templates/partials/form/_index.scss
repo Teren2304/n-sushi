@@ -1,0 +1,22 @@
+.form {
+  background-color: $primary;
+  padding: fvw(70) fvh(80);
+  width: fvw(545);
+  min-height: fvh(554);
+
+  &__item {
+    margin-bottom: fvh(25);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: fvh(40);
+  }
+
+  &__text {
+    margin-bottom: fvh(5);
+  }
+}

@@ -1,0 +1,42 @@
+.circle {
+  @include flex(center, center);
+
+  border-radius: 50%;
+  background-color: $primary;
+
+  &--44 {
+    @include size(fvh(44));
+  }
+
+  &--78 {
+    @include size(fvh(78));
+  }
+
+  &--156 {
+    @include size(fvh(156));
+  }
+
+  &--172 {
+    @include size(fvh(172));
+  }
+
+  &--226 {
+    @include size(fvh(226));
+  }
+
+  &--314 {
+    @include size(fvh(314));
+  }
+
+  &--378 {
+    @include size(fvh(378));
+  }
+
+  &--458 {
+    @include size(fvh(458));
+  }
+
+  &--white {
+    background-color: #fff;
+  }
+}

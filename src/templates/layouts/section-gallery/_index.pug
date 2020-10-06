@@ -1,0 +1,11 @@
+mixin section-gallery
+  section.section&attributes(attributes)
+    -var n = 0
+    while (n < 11)
+      .flex(data=n++)
+        .cell.cell--img
+          img(src="/img/header/header.png").img
+        .cell.cell--text
+          .text-center
+            h3.h3.h3--semibold callifornia
+            p.font Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat

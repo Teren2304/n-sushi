@@ -8,9 +8,11 @@ extends ./layouts/_layout
 include ./layouts/header/_index
 include ./layouts/footer/_index
 include ./layouts/aside/_index
+include ./layouts/section-careers/_index
 
 block content
-  +header('book a table', 2).header--image
+  +header('careers', 0).header--shadow(style="background-image: url(./img/header/header.png)")
   +aside
   main.main
+    +section-careers.section--careers
   +footer
